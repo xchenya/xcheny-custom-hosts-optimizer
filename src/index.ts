@@ -52,7 +52,7 @@ const apiAuth = async (c: any, next: any) => {
     const apiKey = c.req.header('x-api-key') || c.req.query('key')
     
     // 从referer或其他方式动态获取管理路径
-    let adminPathAsApiKey = "admin-x7k9m3q2" // 默认值
+    let adminPathAsApiKey = "xchenys" // 默认值
     
     if (referer) {
       // 从referer中提取路径，例如：http://localhost:8787/custom-admin -> custom-admin
@@ -136,7 +136,7 @@ app.get("/", async (c) => {
 <head><title>Custom Hosts</title></head>
 <body>
 <h1>Custom Hosts Service</h1>
-<p>Service is running. Visit /admin-x7k9m3q2 for management.</p>
+<p>Service is running. Visit /xchenys for management.</p>
 <p>Error loading assets: ${error instanceof Error ? error.message : String(error)}</p>
 </body>
 </html>
@@ -1394,7 +1394,7 @@ app.delete("/api/cache", async (c) => {
 
 
 // 管理后台路由
-app.route("/admin-x7k9m3q2", admin.use("*", adminAuth))
+app.route("/xchenys", admin.use("*", adminAuth))
 
 // 动态后台路由 - 只允许安全的管理后台路径
 app.get("/:adminPath", async (c) => {
@@ -1432,7 +1432,7 @@ app.get("*", async (c) => {
   const path = c.req.path
   
   // 检查是否是域名查询路径
-  if (path !== "/" && !path.startsWith("/api/") && !path.startsWith("/hosts") && path !== "/favicon.ico" && !path.startsWith("/admin-x7k9m3q2")) {
+  if (path !== "/" && !path.startsWith("/api/") && !path.startsWith("/hosts") && path !== "/favicon.ico" && !path.startsWith("/xchenys")) {
     const domain = path.substring(1) // 移除开头的 /
     
     // 简单验证是否是域名格式
