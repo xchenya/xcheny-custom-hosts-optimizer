@@ -26,8 +26,8 @@ ADMIN_USERNAME = "admin"
 # npx wrangler kv:namespace create "custom_hosts" --preview
 [[kv_namespaces]]
 binding = "custom_hosts"
-id = "YOUR_KV_NAMESPACE_ID"  # 替换为你的实际 KV 命名空间 ID
-preview_id = "YOUR_PREVIEW_KV_NAMESPACE_ID"  # 替换为预览环境的 KV ID
+# id = "YOUR_KV_NAMESPACE_ID"  # 替换为你的实际 KV 命名空间 ID
+# preview_id = "YOUR_PREVIEW_KV_NAMESPACE_ID"  # 替换为预览环境的 KV ID
 
 # 监控配置
 [observability]
